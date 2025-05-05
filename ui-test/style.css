@@ -1,10 +1,32 @@
+:root {
+  --font-family: "Segoe UI", sans-serif;
+  --input-border: #9f9f9f;
+  --input-color: #333;
+  --label-color: #ccc;
+  --label-focus: #333;
+  --input-bg: #fff;
+  --body-bg: #fff;
+  --input-radius: 0.5rem;
+  --transition-time: 0.2s;
+}
+
 body {
-  font-family: sans-serif;
+  font-family: var(--font-family);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: white;
+  background-color: var(--body-bg);
+  position: relative;
+}
+
+.back-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.875rem;
 }
 
 .form-group {
@@ -19,21 +41,21 @@ body {
   width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
-  border: 1px solid #9f9f9f;
-  border-radius: 0.5rem;
+  border: 1px solid var(--input-border);
+  border-radius: var(--input-radius);
   outline: none;
-  background: white;
-  color: #333;
-  transition: all 0.2s ease;
+  background: var(--input-bg);
+  color: var(--input-color);
+  transition: all var(--transition-time) ease;
 }
 
 .form-label {
   position: absolute;
   right: 0.75rem;
-  top: 0.75rem;
-  color: #ccc;
+  top: 0.6rem;
+  color: var(--label-color);
   font-size: 1rem;
-  transition: all 0.2s ease;
+  transition: all var(--transition-time) ease;
   pointer-events: none;
   padding: 0 4px;
 }
@@ -44,6 +66,6 @@ body {
   right: 0.5rem;
   font-size: 0.75rem;
   background-color: #fff;
-  color: #333;
-  transition: all 0.2s ease;
+  color: var(--label-focus);
+  transition: all var(--transition-time) ease;
 }

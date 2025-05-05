@@ -1,0 +1,48 @@
+:root {
+  --font-family: "Segoe UI", sans-serif;
+  --body-bg: #f4f4f4;
+  --body-color: #333;
+}
+
+body {
+  background-color: var(--body-bg);
+  margin: 0;
+  padding: 0 16px;
+  min-height: 100dvh;
+  font-family: var(--font-family);
+  color: var(--body-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 2rem;
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--body-color);
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 6.25rem;
+  height: 5rem;
+  &:hover {
+    background-color: #7ba1de;
+    color: #000000;
+  }
+  &:active {
+    background-color: #6384bb;
+  }
+}
