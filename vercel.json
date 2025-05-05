@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/ui-test/index.html" },
+    { "source": "/js-test", "destination": "/js-test/index.html" }
+  ]
+}
