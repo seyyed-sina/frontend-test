@@ -23,10 +23,6 @@ export const createCache = (defaultTtl = 5 * 60 * 1000) => {
     const size = () => {
         return cache.size;
     };
-    const persistToStorage = () => {
-    };
-    const loadFromStorage = () => {
-    };
     return {
         get,
         set,

@@ -8,7 +8,7 @@ export const createApiThrottler = (maxConcurrent: number = 3): ApiThrottler => {
     reject: (reason: any) => void;
   }> = [];
 
-  const tryExecuteNext = () => {
+  const runNext = () => {
     if (pendingQueue.length === 0 || activeCount >= maxConcurrent) {
       return;
     }
@@ -20,19 +20,19 @@ export const createApiThrottler = (maxConcurrent: number = 3): ApiThrottler => {
       .then((result) => {
         resolve(result);
         activeCount--;
-        tryExecuteNext(); // Process next in queue
+        runNext(); // Process next in queue
       })
       .catch((error) => {
         reject(error);
         activeCount--;
-        tryExecuteNext(); // Process next in queue even if this one failed
+        runNext(); // Process next in queue even if this one failed
       });
   };
 
   const add = <T>(fn: () => Promise<T>): Promise<T> => {
     return new Promise<T>((resolve, reject) => {
       pendingQueue.push({ fn, resolve, reject });
-      tryExecuteNext(); // Try to execute immediately if possible
+      runNext(); // Try to execute immediately if possible
     });
   };
 

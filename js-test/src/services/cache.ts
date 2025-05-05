@@ -40,19 +40,6 @@ export const createCache = (defaultTtl = 5 * 60 * 1000): Cache => {
     return cache.size;
   };
 
-  // Create extension point for local storage implementation
-  // This could be expanded later to use localStorage
-  const persistToStorage = () => {
-    // This would be implemented if needed in the future
-    // Example: localStorage.setItem('cache', JSON.stringify([...cache]));
-  };
-
-  const loadFromStorage = () => {
-    // This would be implemented if needed in the future
-    // Example: const data = JSON.parse(localStorage.getItem('cache') || '[]');
-    // data.forEach(([key, item]) => cache.set(key, item));
-  };
-
   return {
     get,
     set,
