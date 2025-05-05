@@ -14,6 +14,7 @@ export interface DetailedPost extends Post {
   user?: {
     id: number;
     username: string;
+    fullName: string;
   };
   comments: Comment[];
 }
@@ -30,5 +31,6 @@ export interface Comment {
   user: {
     id: number;
     username: string;
+    fullName: string;
   };
 }

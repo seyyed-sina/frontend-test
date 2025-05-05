@@ -1,7 +1,7 @@
-import type { DetailedPost, Post } from "../types/post";
-import { createCache } from "./cache";
-import { createApiThrottler } from "./throttler";
-import type { Comment } from "../types/post";
+import type { DetailedPost, Post } from "../types/post.js";
+import { createCache } from "./cache.js";
+import { createApiThrottler } from "./throttler.js";
+import type { Comment } from "../types/post.js";
 
 // API Endpoints
 const BASE_URL = "https://dummyjson.com";

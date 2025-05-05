@@ -1,4 +1,4 @@
-import type { ApiThrottler } from "../types/throttler";
+import type { ApiThrottler } from "../types/throttler.js";
 
 export const createApiThrottler = (maxConcurrent: number = 3): ApiThrottler => {
   let activeCount = 0;

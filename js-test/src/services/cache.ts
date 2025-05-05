@@ -1,4 +1,4 @@
-import type { Cache, CacheItem } from "../types/cache";
+import type { Cache, CacheItem } from "../types/cache.js";
 
 export const createCache = (defaultTtl = 5 * 60 * 1000): Cache => {
   const cache = new Map<string, CacheItem>();
